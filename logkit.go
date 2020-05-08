@@ -53,16 +53,16 @@ const (
 	defaultRotateSize  = 100 * 1024 * 1024
 )
 
-const usage = `logkit, Very easy-to-use server agent for collecting & sending logs & metrics.
+const usage = `SOUND Log, 日志收集代理.
 
 Usage:
 
-  logkit [commands|flags]
+  slog [commands|flags]
 
 The commands & flags are:
 
   -v                 print the version to stdout.
-  -h                 print logkit usage info to stdout.
+  -h                 print slog usage info to stdout.
   -upgrade           check and upgrade version.
 
   -f <file>          configuration file to load
@@ -70,19 +70,16 @@ The commands & flags are:
 Examples:
 
   # start logkit
-  logkit -f logkit.conf
+  slog -f slog.conf
 
   # check version
-  logkit -v
-
-  # checking and upgrade version
-  logkit -upgrade
+  slog -v
 `
 
 var (
 	fversion = flag.Bool("v", false, "print the version to stdout")
 	upgrade  = flag.Bool("upgrade", false, "check and upgrade version")
-	confName = flag.String("f", "logkit.conf", "configuration file to load")
+	confName = flag.String("f", "slog.conf", "configuration file to load")
 )
 
 func getValidPath(confPaths []string) (paths []string) {
